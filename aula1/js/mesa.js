@@ -5,6 +5,7 @@ var camera, scene, renderer;
 function render() {
 	'use strict';
 	renderer.render(scene,camera);
+}
 
 function createScene() {
 	'use strict';
@@ -14,7 +15,7 @@ function createScene() {
 
 function createCamera() {
 	'use strict';
-	camera = new THREE.PerspectiveCamera( 70,window.innetWidth, window.innetHeight, 1,1000 );
+	camera = new THREE.PerspectiveCamera( 70,window.innetWidth / window.innetHeight, 1,1000 );
 	camera.position.x = 50;
 	camera.position.y = 50;
 	camera.position.z = 50;
@@ -23,7 +24,7 @@ function createCamera() {
 
 function init() {
     'use strict';
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innetHeight);
     document.body.appendChild(renderer.domElement);
     createScene();
