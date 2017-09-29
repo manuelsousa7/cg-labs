@@ -81,8 +81,8 @@ function createCamera() {
 function onKeyDown(e){
 	'use strict';
 	switch(e.keyCode){
-		case 65:
-		case 97:
+		case 65: //A
+		case 97: //a
 			scene.traverse(function(node) {
 				if(node instanceof THREE.Mesh){
 					node.material.wireframe = !node.material.wireframe;
@@ -99,8 +99,8 @@ function onKeyDown(e){
 function animate(){
 	'use strict';
 	if(ball.userData.jumping){
-		ball.userData.step += 0.04;
-		ball.position.y = Math.abs(30 * (Math.sin(ball.userData.step)));
+		ball.userData.step += 0.04; //Cacular aqui a cena dos fps para ficar igual em todos os pcs, independentemente das specs
+		ball.position.y = Math.abs(40 * (Math.sin(ball.userData.step)));
 		ball.position.z = 15 * (Math.cos(ball.userData.step));
 	}
 	render();
